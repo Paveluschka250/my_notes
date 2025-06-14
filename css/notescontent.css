@@ -1,0 +1,78 @@
+.notescontent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.note-card {
+  width: 300px;
+  height: 300px;
+  background-color: #fffaf3;
+  border: 2px solid #c09872;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-content h3 {
+  margin: 0;
+  font-family: "dancing-script", Arial, Helvetica, sans-serif;
+}
+
+.note-content p {
+  margin: 0;
+  flex: 1;
+  font-family: "dancing-script", Arial, Helvetica, sans-serif;
+}
+
+.note-divider {
+  border: none;
+  height: 1px;
+  background-color: #c09872;
+  margin: 8px 0;
+}
+
+.note-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.note-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-actions button {
+  background-color: transparent;
+  padding: 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+.note-actions button:hover {
+  background-color: rgba(119, 81, 23, 0.1); /* ✅ leicht transparentes Schwarz */
+}
+
+.note-actions button img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.note-actions button:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+

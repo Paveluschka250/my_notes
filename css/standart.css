@@ -1,6 +1,13 @@
+/* template: #a05a2c, antiquewhite, #fffaf3, #c09872, #84421f */
+
 @font-face {
   font-family: "inter";
   src: url("../assets/fonts/inter.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "dancing-script";
+  src: url("../assets/fonts/dancing-script.ttf") format("truetype");
 }
 
 * {
@@ -9,11 +16,26 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
   font-family: "inter", Arial, Helvetica, sans-serif;
+}
+
+button {
+  margin-top: 25px;
+  padding: 8px;
+  background-color: #a05a2c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #84421f;
 }

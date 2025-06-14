@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="" />
+    <link rel="stylesheet" href="./css/notescontent.css">
     <link rel="stylesheet" href="./css/standart.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Notes</title>
   </head>
-  <body>
+  <body onload="render()">
     <header>
       <a href="./index.html">
         <img src="./assets/img/logo.svg" alt="Logo" />
@@ -25,8 +26,10 @@
         <label for="note">Notiz*</label>
         <textarea id="note" name="note" required></textarea>
 
-        <button type="submit">Notiz speichern</button>
+        <button type="button" onclick="saveNotes()">Notiz speichern</button>
       </form>
+
+      <div class="notescontent" id="notescontent"></div>
     </main>
 
     <footer>
@@ -34,4 +37,6 @@
       <a href="./pages/privacy-policy.html">Datenschutz</a>
     </footer>
   </body>
+  <script src="./js/script.js"></script>
+  <script src="./js/template.js"></script>
 </html>
