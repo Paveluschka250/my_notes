@@ -4,6 +4,7 @@ header {
   align-items: center;
   background-color: antiquewhite;
   height: 100px;
+  flex-shrink: 0;
 }
 
 header img {
@@ -77,6 +78,7 @@ form button {
 
 footer {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   gap: 16px;
