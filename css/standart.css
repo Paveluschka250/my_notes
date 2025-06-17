@@ -40,3 +40,8 @@ button {
 button:hover {
   background-color: #84421f;
 }
+
+.body-no-scroll {
+  overflow: hidden;
+  height: 100%;
+}

@@ -41,14 +41,16 @@ function saveNotes() {
 function toggleOverlay(index) {
   document.getElementById("overlay").classList.remove("d-none");
   document.getElementById("overlay").innerHTML = showNoteOverlay(index);
+  document.body.classList.add("body-no-scroll");
 }
 
 function closeOverlay() {
   document.getElementById("overlay").classList.add("d-none");
+  document.body.classList.remove("body-no-scroll");
 }
 
 function deleteNote(index) {
   titles.splice([index], 1);
-  notes.splice([index], 1)
-  render()
+  notes.splice([index], 1);
+  render();
 }

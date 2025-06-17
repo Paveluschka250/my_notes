@@ -9,7 +9,7 @@ function getNotesTemplate(index) {
       <div class="note-footer">
         <hr class="note-divider" />
         <div class="note-actions">
-          <button onclick="editNote(${index})"><img src="../assets/icons/edit.svg" alt="Edit"></button>
+          <!-- <button onclick="editNote(${index})"><img src="../assets/icons/edit.svg" alt="Edit"></button> -->
           <button onclick="deleteNote(${index}), event.stopPropagation()"><img src="../assets/icons/delete.svg" alt="Delete"></button>
           <button onclick="labelNote(${index})"><img src="../assets/icons/label.svg" alt="Label"></button>
         </div>
@@ -26,9 +26,9 @@ function showNoteOverlay(index) {
       <p>${notes[index]}</p>
       <hr class="note-divider" />
       <div class="note-actions">
-        <button onclick="editNote(${index})">
+        <!-- <button onclick="editNote(${index})">
           <img src="../assets/icons/edit.svg" alt="Edit">
-        </button>
+        </button> -->
         <button onclick="deleteNote(${index}), closeOverlay()">
           <img src="../assets/icons/delete.svg" alt="Delete">
         </button>

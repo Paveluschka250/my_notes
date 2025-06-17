@@ -30,12 +30,23 @@
 .note-content h3 {
   margin: 0;
   font-family: "dancing-script", Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .note-content p {
   margin: 0;
   flex: 1;
   font-family: "dancing-script", Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .note-divider {
