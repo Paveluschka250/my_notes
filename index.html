@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="" />
-    <link rel="stylesheet" href="./css/overlay.css">
-    <link rel="stylesheet" href="./css/notescontent.css">
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/overlay.css" />
+    <link rel="stylesheet" href="./css/notescontent.css" />
     <link rel="stylesheet" href="./css/standart.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Notes</title>
   </head>
-  <body onload="render()">
+  <body onload="initPage()">
     <header>
       <a href="./index.html">
         <img src="./assets/img/logo.svg" alt="Logo" />
@@ -38,6 +39,23 @@
       <a href="./pages/privacy-policy.html">Datenschutz</a>
     </footer>
     <div class="overlay d-none" id="overlay" onclick="closeOverlay()"></div>
+
+    <button class="open-sidebar-btn" onclick="openSidebar()">
+      <img src="./assets/icons/label.svg" alt="Label" />
+    </button>
+
+        <div
+      class="sidebar-overlay d-none"
+      id="sidebarOverlay"
+      onclick="closeSidebar()"
+    ></div>
+
+    <aside class="sidebar d-none" id="sidebar">
+      <h1>Label</h1>
+      <div class="sidebar-content" id="sidebar-content"></div>
+    </aside>
+
+
   </body>
   <script src="./js/script.js"></script>
   <script src="./js/template.js"></script>

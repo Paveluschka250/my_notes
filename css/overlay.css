@@ -5,13 +5,13 @@
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.note-overlay-card {
+.overlay .note-overlay-card {
   width: 90%;
   max-width: 600px;
   max-height: 80vh;
@@ -29,54 +29,19 @@
   gap: 16px;
 }
 
-.note-overlay-card h1 {
+.overlay .note-overlay-card h1 {
   margin: 0;
   font-size: 28px;
 }
 
-.note-overlay-card p {
+.overlay .note-overlay-card p {
   white-space: pre-wrap;
   line-height: 1.6;
   font-size: 18px;
   margin: 0;
 }
 
-.note-divider {
-  height: 1px;
-  background-color: #c09872;
-  border: none;
-}
-
-.note-actions {
+.overlay .note-overlay-card .note-actions {
   display: flex;
   justify-content: space-between;
-}
-
-.note-actions button {
-  background-color: transparent;
-  padding: 4px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.note-actions button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.note-actions button img {
-  width: 24px;
-  height: 24px;
-  object-fit: cover;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.note-actions button:hover img {
-  transform: scale(1.15);
-  filter: brightness(1.2);
-}
-
-.d-none {
-  display: none;
 }

@@ -45,3 +45,37 @@ button:hover {
   overflow: hidden;
   height: 100%;
 }
+
+.d-none {
+  display: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #c09872;
+  margin: 8px 0;
+}
+
+.btn-icon {
+  background-color: transparent;
+  padding: 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-icon:hover {
+  background-color: rgba(119, 81, 23, 0.1);
+}
+
+.btn-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}

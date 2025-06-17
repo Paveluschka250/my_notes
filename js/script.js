@@ -18,11 +18,46 @@ let notes = [
   "Finalize all responsive layout tests on mobile and tablet. Check accessibility contrast ratios and ensure keyboard navigation works. Compress all images to improve load times. Double-check spelling and grammar on all static pages. Configure meta tags for SEO and social media previews. Create a simple 404 page. Set up Google Analytics and cookie consent banner. Finally, make a backup of the entire project and push to GitHub before deployment.",
 ];
 
+let labelTitle = [
+  "Workout Routine",
+  "Books to Read",
+  "Travel Checklist",
+  "Frontend Fixes",
+  "Ideas for Blog",
+  "Mental Health Notes",
+  "Gift List",
+  "Meeting Summary",
+];
+
+let labelNote = [
+  "Monday: Push, Wednesday: Pull, Friday: Legs. Include warm-up & stretching.",
+  "– 'Atomic Habits'\n– 'Deep Work'\n– 'The Pragmatic Programmer'",
+  "✓ Passport\n✓ Tickets\n✓ Powerbank\n✓ Travel insurance\n✓ Charger adapter",
+  "Fix mobile nav overlap, update hover transitions, test dark mode toggle.",
+  "Write about digital minimalism, habits vs. goals, and productivity myths.",
+  "Try journaling at night, limit screen time, and take 10-minute walks.",
+  "Dad – headphones\nSister – handmade soap\nColleague – coffee gift card",
+  "Client liked draft 2. Next steps: final mockup and handoff by Friday.",
+];
+
+  function initPage() {
+    render();
+    loadSidebar();
+  }
+
 function render() {
   let contentRef = document.getElementById("notescontent");
   contentRef.innerHTML = "";
   for (let index = 0; index < notes.length; index++) {
     contentRef.innerHTML += getNotesTemplate(index);
+  }
+}
+
+function loadSidebar() {
+  let labelcontentRef = document.getElementById("sidebar-content")
+  labelcontentRef.innerHTML = ""
+  for (let index = 0; index < labelNote.length; index++) {
+    labelcontentRef.innerHTML += getLabelTemplate(index)
   }
 }
 
@@ -44,6 +79,12 @@ function toggleOverlay(index) {
   document.body.classList.add("body-no-scroll");
 }
 
+function toggleLabelOverlay(index) {
+  document.getElementById("overlay").classList.remove("d-none");
+  document.getElementById("overlay").innerHTML = showLabelNoteOverlay(index);
+  document.body.classList.add("body-no-scroll");
+}
+
 function closeOverlay() {
   document.getElementById("overlay").classList.add("d-none");
   document.body.classList.remove("body-no-scroll");
@@ -53,4 +94,30 @@ function deleteNote(index) {
   titles.splice([index], 1);
   notes.splice([index], 1);
   render();
+}
+
+function deleteLabelNote(index) {
+  labelTitle.splice([index], 1);
+  labelNote.splice([index], 1);
+  loadSidebar();
+}
+
+function openSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.remove("d-none");
+  setTimeout(() => sidebar.classList.add("active"), 10);
+  document.getElementById("sidebarOverlay").classList.remove("d-none");
+  document.body.classList.add("body-no-scroll");
+  document.querySelector(".open-sidebar-btn").classList.add("hide");
+}
+
+function closeSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.remove("active");
+  setTimeout(() => {
+    sidebar.classList.add("d-none");
+  }, 300);
+  document.getElementById("sidebarOverlay").classList.add("d-none");
+  document.body.classList.remove("body-no-scroll");
+  document.querySelector(".open-sidebar-btn").classList.remove("hide");
 }
