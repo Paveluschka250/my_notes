@@ -41,6 +41,12 @@ let labelNote = [
 ];
 
 function initPage() {
+  getFromLocalStorage();
+  updateUI();  
+}
+
+function updateUI() {
+  saveToLocalStorage();
   render();
   loadSidebar();
 }
@@ -66,9 +72,10 @@ function saveNotes() {
   let noteInput = document.getElementById("note");
   let title = titleInput.value;
   let note = noteInput.value;
+  if (!title || !note) return;
   titles.push(title);
   notes.push(note);
-  render();
+  updateUI()
   titleInput.value = "";
   noteInput.value = "";
 }
@@ -93,14 +100,14 @@ function closeOverlay() {
 function deleteNote(index) {
   titles.splice([index], 1);
   notes.splice([index], 1);
-  initPage();
+  updateUI()
 }
 
 function pushLabelNote(index) {
   labelTitle.push(titles[index]);
   labelNote.push(notes[index]);
   deleteNote(index);
-  initPage();
+  updateUI()
 }
 
 function enlabelNote(index) {
@@ -108,7 +115,7 @@ function enlabelNote(index) {
   notes.push(labelNote[index]);
   labelTitle.splice([index], 1);
   labelNote.splice([index], 1);
-  initPage();
+  updateUI()
 }
 
 function openSidebar() {
@@ -129,4 +136,28 @@ function closeSidebar() {
   document.getElementById("sidebarOverlay").classList.add("d-none");
   document.body.classList.remove("body-no-scroll");
   document.querySelector(".open-sidebar-btn").classList.remove("hide");
+}
+
+function saveToLocalStorage() {
+  localStorage.setItem("titles", JSON.stringify(titles));
+  localStorage.setItem("notes", JSON.stringify(notes));
+  localStorage.setItem("labelTitle", JSON.stringify(labelTitle));
+  localStorage.setItem("labelNote", JSON.stringify(labelNote));
+}
+
+function getFromLocalStorage() {
+  const storedTitles = localStorage.getItem("titles");
+  const storedNotes = localStorage.getItem("notes");
+  const storedLabelTitles = localStorage.getItem("labelTitle");
+  const storedLabelNotes = localStorage.getItem("labelNote");
+
+  if (storedTitles && storedNotes) {
+    titles = JSON.parse(storedTitles);
+    notes = JSON.parse(storedNotes);
+  }
+
+  if (storedLabelTitles && storedLabelNotes) {
+    labelTitle = JSON.parse(storedLabelTitles);
+    labelNote = JSON.parse(storedLabelNotes);
+  }
 }

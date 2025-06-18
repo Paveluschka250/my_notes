@@ -43,7 +43,7 @@ button:hover {
 
 .body-no-scroll {
   overflow: hidden;
-  height: 100%;
+  height: 100vh;
 }
 
 .d-none {
