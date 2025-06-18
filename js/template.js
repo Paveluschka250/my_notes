@@ -6,8 +6,8 @@ function getNotesTemplate(index) {
       <p>${notes[index]}</p>   
       <hr/>
       <div class="note-actions">
-        <button class="btn-icon" onclick="deleteNote(${index}), event.stopPropagation()"><img src="../assets/icons/delete.svg" alt="Delete"></button>
-        <button class="btn-icon" onclick="pushLabelNote(${index}), event.stopPropagation()"><img src="../assets/icons/label.svg" alt="Label"></button>
+        <button class="btn-icon" onclick="deleteNote(${index}), event.stopPropagation()"><img src="./assets/icons/delete.svg" alt="Delete"></button>
+        <button class="btn-icon" onclick="pushLabelNote(${index}), event.stopPropagation()"><img src="./assets/icons/label.svg" alt="Label"></button>
       </div>
     </div>
   `;
@@ -25,7 +25,7 @@ function showNoteOverlay(index) {
           <img src="../assets/icons/delete.svg" alt="Delete">
         </button>
         <button class="btn-icon" onclick="pushLabelNote(${index}), closeOverlay()">
-          <img src="../assets/icons/label.svg" alt="Label">
+          <img src="./assets/icons/label.svg" alt="Label">
         </button>
       </div>
     </div>
@@ -51,7 +51,7 @@ function showLabelNoteOverlay(index) {
       <hr/>
       <div class="note-actions">
         <button class="btn-icon" onclick="enlabelNote(${index}), closeOverlay()">
-          <img src="../assets/icons/enlabel.svg" alt="Enlabel">
+          <img src="./assets/icons/enlabel.svg" alt="Enlabel">
         </button>
       </div>
     </div>
