@@ -40,10 +40,10 @@ let labelNote = [
   "Client liked draft 2. Next steps: final mockup and handoff by Friday.",
 ];
 
-  function initPage() {
-    render();
-    loadSidebar();
-  }
+function initPage() {
+  render();
+  loadSidebar();
+}
 
 function render() {
   let contentRef = document.getElementById("notescontent");
@@ -54,10 +54,10 @@ function render() {
 }
 
 function loadSidebar() {
-  let labelcontentRef = document.getElementById("sidebar-content")
-  labelcontentRef.innerHTML = ""
+  let labelcontentRef = document.getElementById("sidebar-content");
+  labelcontentRef.innerHTML = "";
   for (let index = 0; index < labelNote.length; index++) {
-    labelcontentRef.innerHTML += getLabelTemplate(index)
+    labelcontentRef.innerHTML += getLabelTemplate(index);
   }
 }
 
@@ -93,13 +93,22 @@ function closeOverlay() {
 function deleteNote(index) {
   titles.splice([index], 1);
   notes.splice([index], 1);
-  render();
+  initPage();
 }
 
-function deleteLabelNote(index) {
+function pushLabelNote(index) {
+  labelTitle.push(titles[index]);
+  labelNote.push(notes[index]);
+  deleteNote(index);
+  initPage();
+}
+
+function enlabelNote(index) {
+  titles.push(labelTitle[index]);
+  notes.push(labelNote[index]);
   labelTitle.splice([index], 1);
   labelNote.splice([index], 1);
-  loadSidebar();
+  initPage();
 }
 
 function openSidebar() {
